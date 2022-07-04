@@ -39,7 +39,7 @@ function alldata(request, response) {
 
 app.get('/api/:auth/database/:element/', searchElement);
   
-function searchElement(request, response) {
+async function searchElement(request, response) {
     var token = request.params.auth;
     authenticate(token)
 
