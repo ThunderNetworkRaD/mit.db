@@ -1,4 +1,4 @@
-const client;
+var client;
 client.config = require('./config.js').settings;
 
 const MapDB = require('quickmap.db');
