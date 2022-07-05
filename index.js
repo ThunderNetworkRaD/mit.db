@@ -82,7 +82,7 @@ async function searchElement(request, response) {
     authenticate(token, response, search)
 
     var elements = await db.get(word)
-    var elements = JSON.parse(elements);
+//    var elements = JSON.parse(elements);
        
     if(elements) {
         var reply = elements  
@@ -109,7 +109,7 @@ async function set(request, response) {
     
     await db.set(element, data)
     var res = await db.get(element)
-    var res = JSON.parse(res);
+//    var res = JSON.parse(res);
     if(res) {
         var reply = res;         
     } else {
@@ -135,7 +135,7 @@ async function remove(request, response) {
     
     await db.set(element, data)
     var res = await db.delete(element)
-    var res = JSON.parse(res);
+//    var res = JSON.parse(res);
     if(res) {
         var reply = res     
     } else {
