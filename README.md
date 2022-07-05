@@ -2,7 +2,7 @@
 A quick-deploy database server
 
 installation:
-- download the code from [here]()
+- download the code from [here](https://github.com/FIUSdevelopment/database-server/archive/refs/tags/1.0.0.zip)
 - change the password in password.js (it need to be an array)
 - for start do npm start
 
