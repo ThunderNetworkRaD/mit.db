@@ -1,4 +1,4 @@
-# database
+# Database
 A quick-deploy database server
 
 installation:
