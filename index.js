@@ -95,3 +95,28 @@ async function set(request, response) {
        
     response.send(reply);
 }
+
+// Set a db variable
+
+app.get('/api/:auth/database/:element/remove', remove);
+  
+async function remove(request, response) {
+    var token = request.params.auth;
+    var element = request.params.element;
+    var data = request.params.data;
+
+    set = 'remove '+element
+    authenticate(token, set)
+    
+    await db.set(element, response, data)
+    const res = await db.delete(element)
+    if(res) {
+        var reply = res;         
+    } else {
+        var reply = {
+            status:"Not Found"
+        }
+    }
+       
+    response.send(reply);
+}
