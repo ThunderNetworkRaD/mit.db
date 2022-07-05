@@ -84,7 +84,7 @@ async function searchElement(request, response) {
     var elements = await db.get(word)
        
     if(elements) {
-        var reply = elements;         
+        var reply = {elements};         
     } else {
         var reply = {
             status:"Not Found"
@@ -109,10 +109,10 @@ async function set(request, response) {
     await db.set(element, data)
     const res = await db.get(element)
     if(res) {
-        var reply = res;         
+        var reply = {res};         
     } else {
         var reply = {
-            status:"Not Found"
+            status:"404-Not Found"
         }
     }
        
@@ -134,7 +134,9 @@ async function remove(request, response) {
     await db.set(element, data)
     const res = await db.delete(element)
     if(res) {
-        var reply = res;         
+        var reply = {
+            res
+        };         
     } else {
         var reply = {
             status:"Not Found"
