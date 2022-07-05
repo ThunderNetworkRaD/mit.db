@@ -4,6 +4,16 @@ client.config = require('./config.js').settings;
 const MapDB = require('quickmap.db');
 const db = new MapDB('database.json');
 
+
+async function setup() {
+    var isset = await db.get('client.issetupped')
+    if (!isset) {
+        await db.set('client.issetupped', true)
+    }
+}
+
+setup()
+
 var fs = require('fs');
 var data = fs.readFileSync('./data/database.json');
 
