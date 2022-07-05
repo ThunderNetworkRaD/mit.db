@@ -130,7 +130,7 @@ async function remove(request, response) {
     var data = request.params.data;
 
     set = 'remove '+element
-    authenticate(token, set)
+    authenticate(token, response, set)
     
     await db.set(element, response, data)
     const res = await db.delete(element)
