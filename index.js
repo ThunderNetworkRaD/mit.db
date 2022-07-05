@@ -108,7 +108,7 @@ async function set(request, response) {
     authenticate(token, response, set)
     
     await db.set(element, data)
-    const res = await db.get(element)
+    var res = await db.get(element)
     var res = JSON.parse(res);
     if(res) {
         var reply = res;         
@@ -134,7 +134,7 @@ async function remove(request, response) {
     authenticate(token, response, set)
     
     await db.set(element, data)
-    const res = await db.delete(element)
+    var res = await db.delete(element)
     var res = JSON.parse(res);
     if(res) {
         var reply = res     
