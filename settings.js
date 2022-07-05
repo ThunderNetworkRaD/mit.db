@@ -1,4 +1,4 @@
 module.exports = {
-    port: '15000', //database port
+    port: '10009', //database port
     auth: ['abaco2022']
 }
