@@ -57,8 +57,8 @@ async function searchElement(request, response) {
 
     var elements = await db.get(word)
        
-    if(elements[word]) {
-        var reply = elements[word];         
+    if(elements) {
+        var reply = elements;         
     }
     else {
         var reply = {
