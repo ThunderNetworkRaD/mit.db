@@ -29,7 +29,7 @@ app.listen(client.config.port,
 app.use(express.static('public'));
 app.use(cors());
 
-async function authenticate(token, what) {
+async function authenticate(token, response, what) {
     if (!client.config.auth.includes(token)) {
         response.send('ERROR - Not auth')
     } else {
@@ -43,7 +43,7 @@ app.get('/api/:auth/database', alldata);
   
 function alldata(request, response) {
     var token = request.params.auth;
-    authenticate(token, 'alldata')
+    authenticate(token, response, 'alldata')
     response.send(elements);
 }
 
@@ -56,7 +56,7 @@ async function searchElement(request, response) {
     var word = request.params.element;
 
     search = 'search '+ word
-    authenticate(token, search)
+    authenticate(token, response, search)
 
     var elements = await db.get(word)
        
@@ -83,7 +83,7 @@ async function set(request, response) {
     set = 'set '+element+' to '+data
     authenticate(token, set)
     
-    await db.set(element, data)
+    await db.set(element, response, data)
     const res = await db.get(element)
     if(res) {
         var reply = res;         
