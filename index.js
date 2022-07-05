@@ -13,11 +13,11 @@ async function setup() {
 }
 
 setup()
-
+/*
 var fs = require('fs');
 var data = fs.readFileSync('./data/database.json');
 
-var elements = JSON.parse(data);
+var elements = JSON.parse(data); */
 const express = require("express");
 const app = express();
 
