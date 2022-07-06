@@ -60,19 +60,6 @@ async function authenticate(token, response, what) {
     }
 }
 
-/*
-app.post('/', (req, res) => {
-    res.send('Got a POST request')
-})
-*/
-
-app.post('/api/:auth/database', (req, res) => {
-    var token = request.params.auth;
-    authenticate(token, response, 'alldata')
-    res.send('elements')
-})
-
-/*
 // All dates in the database
 
 app.get('/api/:auth/database', alldata);
@@ -159,4 +146,3 @@ async function remove(request, response) {
        
     response.send(reply);
 }
-*/
