@@ -103,7 +103,29 @@ async function searchElement(request, response) {
 
 // Set a db variable
 
-app.put('/api/:auth/database/:element/set/:data', set);
+app.put('/api/:auth/database/:element/set/:data', (request, response) => {
+    var token = request.params.auth;
+    var element = request.params.element;
+    var data = request.params.data;
+
+    set = 'set '+element+' to '+data
+    authenticate(token, response, set)
+    
+    await db.set(element, data)
+    var res = await db.get(element)
+//    var res = JSON.parse(res);
+    if(res) {
+        var reply = {
+            status: 'Done'
+        };         
+    } else {
+        var reply = {
+            status:"404 - Not Found"
+        }
+    }
+       
+    response.send(reply);       
+});
   
 async function set(request, response) {
     var token = request.params.auth;
