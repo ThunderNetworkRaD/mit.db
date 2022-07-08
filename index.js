@@ -103,7 +103,7 @@ async function searchElement(request, response) {
 
 // Set a db variable
 
-app.get('/api/:auth/database/:element/set/:data', set);
+app.put('/api/:auth/database/:element/set/:data', set);
   
 async function set(request, response) {
     var token = request.params.auth;
@@ -129,7 +129,7 @@ async function set(request, response) {
     response.send(reply);
 }
 
-// Set a db variable
+// Remove a db variable
 
 app.get('/api/:auth/database/:element/remove', remove);
   
