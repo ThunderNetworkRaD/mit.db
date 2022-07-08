@@ -110,6 +110,7 @@ async function set(request, response) {
     authenticate(token, response, set)
     
     await db.set(element, data)
+    var res = await db.get(element)
 //    var res = JSON.parse(res);
     if(res) {
         var reply = {
