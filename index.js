@@ -82,9 +82,13 @@ async function searchElement(request, response) {
     authenticate(token, response, search)
 
     var elements = await db.get(word)
-    console.log(elements)
-    var elements = JSON.parse(elements);
-    console.log(elements)
+    var elements = {
+        name: word, 
+        value: elements  
+    }
+    // console.log(elements)
+    // var elements = JSON.parse(elements);
+    // console.log(elements)
        
     if(elements) {
         var reply = elements  
