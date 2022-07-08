@@ -94,7 +94,7 @@ async function searchElement(request, response) {
         var reply = elements  
     } else {
         var reply = {
-            status:"Not Found"
+            status:"404 - Not Found"
         }
     }
        
@@ -122,7 +122,7 @@ async function set(request, response) {
         };         
     } else {
         var reply = {
-            status:"404-Not Found"
+            status:"404 - Not Found"
         }
     }
        
