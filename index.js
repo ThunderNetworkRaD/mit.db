@@ -103,7 +103,7 @@ async function searchElement(request, response) {
 
 // Set a db variable
 
-app.put('/api/:auth/database/:element/set/:data', (request, response) => {
+app.put('/api/:auth/database/:element/set/:data', async (request, response) => {
     var token = request.params.auth;
     var element = request.params.element;
     var data = request.params.data;
