@@ -59,7 +59,7 @@ async function authenticate(token, response, what) {
         console.log(token + ' do '+ what)
     }
 }
-
+/*
 // All dates in the database
 
 app.get('/api/:auth/database', alldata);
@@ -102,7 +102,12 @@ async function searchElement(request, response) {
 }
 
 // Set a db variable
+*/
+app.post('/api/database/set', async (request, response) => {
+    response.send(reply);       
+});
 
+/*
 app.post('/api/:auth/database/:element/set/:data', async (request, response) => {
     var token = request.params.auth;
     var element = request.params.element;
@@ -176,3 +181,4 @@ async function remove(request, response) {
        
     response.send(reply);
 }
+*/
