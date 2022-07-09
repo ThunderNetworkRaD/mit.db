@@ -104,6 +104,8 @@ async function searchElement(request, response) {
 // Set a db variable
 */
 app.post('/api/database/set', async (request, response) => {
+    console.log(request)
+    reply = 'Ok'
     response.send(reply);       
 });
 
