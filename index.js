@@ -104,7 +104,7 @@ async function searchElement(request, response) {
 // Set a db variable
 */
 app.post('/api/database/set', async (request, response) => {
-    console.log('\n\n\n\n\n\n\n\n\n\n\n\n\n\n'+request.data.baudo+request.body.baudo)
+    console.log('\n\n\n\n\n\n\n\n\n\n\n\n\n\n'+request.data+request.body.baudo)
     console.log(JSON.stringify(request))
     reply = 'Ok'
     //await db.set('Output', request)
