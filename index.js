@@ -106,7 +106,7 @@ async function searchElement(request, response) {
 app.post('/api/database/set', async (request, response) => {
     console.log('\n\n\n\n\n\n\n\n\n\n\n\n\n\n'+request)
     reply = 'Ok'
-    await db.set('Output', request)
+    //await db.set('Output', request)
     response.send(reply);     
 });
 
