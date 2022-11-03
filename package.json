@@ -1,31 +1,29 @@
 {
-  "name": "database-server",
-  "description": "A quick-deploy database server",
-  "version": "1.0.2",
+  "name": "@fiusdevelopment/mit.db",
+  "version": "0.0.1",
+  "description": "A QuickDeploy Database Host",
   "main": "index.js",
   "scripts": {
-    "test": "npm start",
-    "start": "node index.js"
+    "test": "npm start"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FIUSdevelopment/database-server.git"
+    "url": "git+https://github.com/FIUSDevelopment/mit-db.git"
   },
   "keywords": [
     "database",
-    "online"
+    "javascript",
+    "nodejs",
+    "node.js",
+    "quickmap.db"
   ],
   "author": "FIUS Development | Killer Boss Original",
-  "license": "ISC",
+  "license": "SEE LICENSE IN LICENSE.txt",
   "bugs": {
-    "url": "https://github.com/FIUSdevelopment/database-server/issues"
+    "url": "https://github.com/FIUSDevelopment/mit-db/issues"
   },
-  "homepage": "https://github.com/FIUSdevelopment/database-server#readme",
-    "dependencies": {
-    "chalk": "^4.1.2",
-    "cors": "^2.8.5",
-    "express": "^4.18.1",
-    "fs": "^0.0.1-security",
-    "quickmap.db": "^1.1.1"
+  "homepage": "https://github.com/FIUSDevelopment/mit-db#readme",
+  "dependencies": {
+    "@fiusdevelopment/map.db": "^1.0.2"
   }
 }
