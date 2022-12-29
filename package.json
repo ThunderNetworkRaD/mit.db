@@ -1,29 +1,27 @@
 {
-  "name": "@fiusdevelopment/mit.db",
-  "version": "0.0.1",
-  "description": "A QuickDeploy Database Host",
+  "name": "mit.db",
+  "version": "2022.12.29",
+  "description": "An online server for quickmap.db",
   "main": "index.js",
   "scripts": {
-    "test": "npm start"
+    "test": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FIUSDevelopment/mit-db.git"
+    "url": "git+https://github.com/ThunderNetworkRaD/mit.db.git"
   },
   "keywords": [
-    "database",
-    "javascript",
-    "nodejs",
-    "node.js",
-    "quickmap.db"
+    "Database"
   ],
-  "author": "FIUS Development | Killer Boss Original",
-  "license": "SEE LICENSE IN LICENSE.txt",
+  "author": "Thunder Network RaD | Killer Boss Original",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FIUSDevelopment/mit-db/issues"
+    "url": "https://github.com/ThunderNetworkRaD/mit.db/issues"
   },
-  "homepage": "https://github.com/FIUSDevelopment/mit-db#readme",
+  "homepage": "https://github.com/ThunderNetworkRaD/mit.db#readme",
   "dependencies": {
-    "@fiusdevelopment/map.db": "^1.0.2"
+    "colors": "^1.4.0",
+    "quickmap.db": "^2022.12.29",
+    "readline-sync": "^1.4.10"
   }
 }
