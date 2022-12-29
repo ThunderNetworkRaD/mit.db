@@ -1,5 +1,5 @@
 {
-  "name": "mit.db",
+  "name": "@thundernetworkrad/mit.db",
   "version": "2022.12.29",
   "description": "An online server for quickmap.db",
   "main": "index.js",
