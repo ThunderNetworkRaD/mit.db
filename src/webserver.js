@@ -9,7 +9,7 @@ module.exports = (port) => {
 
     app.get('/:command/:makewhat/:id/:token', function (req, res) {
         if (eval('cm.'+req.params.id) != req.params.token) return res.send('{ "Error"= "Invalid token or id" }')
-        else console.log(req.params.command, req.params.makewhat)
+        else console.log(req.params.command, req.params.makewhat, req.body)
     })
 
     app.listen(openOn)
