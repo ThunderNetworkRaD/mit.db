@@ -1,6 +1,6 @@
 {
   "name": "@thundernetworkrad/mit.db",
-  "version": "2022.12.29",
+  "version": "2023.01.11",
   "description": "An online server for quickmap.db",
   "main": "index.js",
   "scripts": {
@@ -19,9 +19,15 @@
     "url": "https://github.com/ThunderNetworkRaD/mit.db/issues"
   },
   "homepage": "https://github.com/ThunderNetworkRaD/mit.db#readme",
+  "bin": {
+    "start": "./bin/start.js",
+    "version": ""
+  },
   "dependencies": {
-    "colors": "^1.4.0",
-    "quickmap.db": "^2022.12.29",
-    "readline-sync": "^1.4.10"
+    "@thundernetworkrad/colors": "^2023.1.10",
+    "@thundernetworkrad/map.db": "^2022.12.29",
+    "@thundernetworkrad/readline-sync": "^2023.1.10",
+    "express": "^4.18.2",
+    "yargs": "^17.6.2"
   }
 }
