@@ -4,7 +4,7 @@ MapDB A Map that stores data locally and loads it at startup. Written in JavaScr
 
 ### How does it work?
 
-Map.db works just like the JavaScript built-in **Map**, with the same methods and functionalities, and in fact it uses itself a Map, but while the built-in Map only stores data in internal memory, this module **stores data locally in a file and loads it back in the Map at startup**.
+Mit.db works just like the JavaScript built-in **Map**, with the same methods and functionalities, and in fact it uses itself a Map, but while the built-in Map only stores data in internal memory, this module **stores data locally in a file and loads it back in the Map at startup**.
 
 The purpose of this module is to make the JavaScript built-in Map an actual **database**, and there comes the name `mit.db`: a Map that can be used as a database.
 
@@ -58,5 +58,12 @@ await db.set('what', 'how')
 #### get()
 
 ```js
-var answ = db.get('what') // answ = how
+var ansa = db.get('what') // ansa = how
+```
+
+#### has()
+
+```js
+var ansb = db.has('what') // ansb = true
+var ansc = db.has('attila') // ansc = false
 ```

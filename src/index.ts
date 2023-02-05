@@ -8,10 +8,10 @@ writeDB = fsp.writeFile;
 export class MitDB {
     /**
      * @constructor
-     * @param filename If not set, MapDB will only use internal memory
+     * @param filename If not set, MitDB will only use internal memory
      * @example 'file.db'
      * @param options Options to pass to the constructor
-     * @param options.dirname
+     * @param options.dirname Where to save the file?
      * @example 'data'
      */
     constructor(fn: string | undefined, options: any) {
@@ -58,15 +58,20 @@ export class MitDB {
     /**
      * @param key 
      */
-
     get(key: string | number) {
-        if (map) {
-            return map.get(key)
-        } else {
-            file = fs.readFileSync(db);
-            data = JSON.parse(file.toString());
+        file = fs.readFileSync(db);
+        data = JSON.parse(file.toString());
 
-            return data.find((pair: any) => pair.key == key)?.value || undefined;
-        }
+        return data.find((pair: any) => pair.key == key)?.value || undefined;
+    }
+
+    /**
+     * @param key 
+     */
+    has(key: string | number) {
+        const file = fs.readFileSync(db);
+        const data = JSON.parse(file.toString());
+
+        return data.find((pair: any) => pair.key == key) ? true : false;
     }
 }
