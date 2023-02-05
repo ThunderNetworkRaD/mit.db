@@ -1,7 +1,7 @@
 {
   "name": "mit.db",
   "version": "2023.02.04",
-  "description": "An easy and quick database that works",
+  "description": "An easy and quick database",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {
