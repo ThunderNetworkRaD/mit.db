@@ -1,33 +1,25 @@
 {
-  "name": "@thundernetworkrad/mit.db",
-  "version": "2023.01.26",
-  "description": "An online server for quickmap.db",
-  "main": "index.js",
+  "name": "mit.db",
+  "version": "2023.02.04",
+  "description": "An easy and quick database that works",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
-    "test": "node index.js"
+    "install": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ThunderNetworkRaD/mit.db.git"
+    "url": "git+https://github.com/ThunderNetworkRaD/map.db.git"
   },
-  "keywords": [
-    "Database"
-  ],
-  "author": "Thunder Network RaD | Killer Boss Original",
+  "author": "Thunder Network Development | Killer Boss Original",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ThunderNetworkRaD/mit.db/issues"
+    "url": "https://github.com/ThunderNetworkRaD/map.db/issues"
   },
-  "homepage": "https://github.com/ThunderNetworkRaD/mit.db#readme",
-  "bin": {
-    "start": "./bin/start.js",
-    "version": ""
-  },
+  "homepage": "https://github.com/ThunderNetworkRaD/map.db#readme",
   "dependencies": {
-    "@thundernetworkrad/colors": "^2023.1.10",
-    "@thundernetworkrad/map.db": "^2022.12.29",
-    "@thundernetworkrad/readline-sync": "^2023.1.10",
-    "express": "^4.18.2",
-    "yargs": "^17.6.2"
+    "@types/node": "^18.11.18",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.5"
   }
 }
