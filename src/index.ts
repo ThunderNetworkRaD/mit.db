@@ -5,7 +5,7 @@ let writeDB: any, map: any, filename: string | undefined = 'database.db', dirnam
 
 writeDB = fsp.writeFile;
 
-export class MapDB {
+export class MitDB {
     /**
      * @constructor
      * @param filename If not set, MapDB will only use internal memory
