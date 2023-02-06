@@ -1,34 +1,14 @@
 # Mit.db
 
-MapDB A Map that stores data locally and loads it at startup. Written in JavaScript
-
-### How does it work?
-
-Map.db works just like the JavaScript built-in **Map**, with the same methods and functionalities, and in fact it uses itself a Map, but while the built-in Map only stores data in internal memory, this module **stores data locally in a file and loads it back in the Map at startup**.
-
-The purpose of this module is to make the JavaScript built-in Map an actual **database**, and there comes the name `mit.db`: a Map that can be used as a database.
-
-The file structure is easily accessible and the data is stored in JSON format, allowing manual editing
-
-You also have the option to only use local storage without touching internal memory
-
-### Differences
-
-Although this module works in fact the same way as a Map, there are still some little differences between them, which are listed below:
-
-> - `Mit#set()` and `Mit#delete()` return **promises**
-> - When a value is reassigned to a key, it is only saved in the Map but not in the actual save file, so you always have to **set the key/value pair with the new value**.
-> Example:
-
 ```js
-const { MapDB } = require('mit.db');
-const mapdb = new MapDB('file.db'); // this is the save file's name + extension
+const MitDB = require('mit.db');
+const db = new MitDB('file.db'); // this is the save file's name + extension
 async function sample() {
     // assuming 'somekey' exists in the Map and has a value { cool: false }
-    const data = mapdb.get('somekey');
+    const data = db.get('somekey');
     // reassigning the 'cool' property a new value
     data.cool = true;
-    await mapdb.set('somekey', data);
+    await db.set('somekey', data);
     // now 'somekey' has a new value { cool: true }
 }
 ```
@@ -52,11 +32,66 @@ const db = new MapDB('database.json') // this is the save file's name + extensio
 #### set()
 
 ```js
-await db.set('what', 'how')
+    await db.set('ciao', 'hello')
+    await db.set('arrivederci', 'bye')
 ```
 
 #### get()
 
 ```js
-var answ = db.get('what') // answ = how
+var ansa = db.get('ciao') // ansa = hello
+```
+
+#### has()
+
+```js
+var asnb = db.has('arrivederci') // ansb = true
+```
+
+#### entries()
+
+```js
+var ansc = db.entries() // ansc = [ 'ciao', 'hello' ], [ 'arrivederci', 'bye' ] ]
+```
+
+#### keys()
+
+```js
+var ansd = db.keys() // ansd = [ 'ciao', 'arrivederci' ]
+```
+
+#### values()
+
+```js
+var anse = db.values() // anse = [ 'hello', 'bye' ]
+```
+
+#### forEach()
+
+```js
+db.forEach((value, key) => console.log(value, key)) // console.log = hello ciao
+// console.log = bye arrivederci
+```
+
+#### delete()
+
+```js
+// [{"key":"ciao","value":"hello"}, {"key":"arrivederci","value":"bye"}]
+await db.delete('ciao')
+// [{"key":"arrivederci","value":"bye"}]
+```
+
+#### clear()
+
+```js
+// [{"key":"ciao","value":"hello"}, {"key":"arrivederci","value":"bye"}]
+await db.delete('ciao')
+// []
+```
+
+#### size()
+
+```js
+// [{"key":"ciao","value":"hello"}, {"key":"arrivederci","value":"bye"}]
+var ansf = db.size() // size = 2
 ```
