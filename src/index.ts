@@ -4,6 +4,8 @@ import * as fs from 'fs';
 const writeDB = promisify(fs.writeFile);
 
 class MitDB {
+    readonly db;
+
     /**
      * @constructor
      * @param filename If not set, MapDB will only use internal memory
@@ -12,15 +14,16 @@ class MitDB {
      * @param options.dirname where to put the database?
      */
     constructor(fn: string, options?: { dirname: string }) {
+        let dirname;
         if (options && options.dirname) {
-            this.dirname = options.dirname;
+            dirname = options.dirname;
         } else { 
-            this.dirname = 'data';
+            dirname = 'data';
         }
 
         if (!fs.existsSync(dirname)) fs.mkdirSync(dirname);
 
-        this.db = `./${dirname}/${filename}`
+        this.db = `./${dirname}/${fn}`
     }
 
     /**

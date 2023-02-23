@@ -1,6 +1,6 @@
 {
   "name": "mit.db",
-  "version": "2023.02.23.2",
+  "version": "2023.02.23.3",
   "description": "An easy and quick database",
   "main": "build/index.js",
   "types": "build/index.d.ts",
