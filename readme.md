@@ -25,8 +25,8 @@ With **npm**:
 #### Setup
 
 ```js
-const { MapDB } = require('mit.db')
-const db = new MapDB('database.json') // this is the save file's name + extension
+const MitDB = require('mit.db')
+const db = new MitDB('database.json') // this is the save file's name + extension
 ```
 
 #### set()
