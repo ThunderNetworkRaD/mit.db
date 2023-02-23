@@ -3,7 +3,7 @@ import * as fs from 'fs';
 
 const writeDB = promisify(fs.writeFile);
 
-let map: any, db: any, filename: string, dirname: string;
+let map: any, filename: string;
 
 class MitDB {
     /**
@@ -14,17 +14,16 @@ class MitDB {
      * @param options.dirname where to put the database?
      */
     constructor(fn?: string, options?: { dirname: string }) {
-        if (!dirname || dirname != 'data') dirname = 'data';
-
         map = new Map();
 
         if (fn) filename = fn;
 
-        if (options && options.dirname) dirname = options.dirname;
+        if (options && options.dirname) const dirname = options.dirname;
+        else const dirname = 'data';
 
         if (!fs.existsSync(dirname)) fs.mkdirSync(dirname);
 
-        db = `./${dirname}/${filename}`
+        const db = `./${dirname}/${filename}`
     }
 
     /**
