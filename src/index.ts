@@ -99,11 +99,11 @@ class MitDB {
      * 
      * @param callbackfn 
      */
-    forEach(callback: (value: any, key: any, map: Map<any, any>) => void) {
+    forEach(callback: (value: any, key: any) => void) {
         const file = fs.readFileSync(this.db);
         const data: any[] = JSON.parse(file.toString());
 
-        data.forEach((pair: any) => callback(pair.value, pair.key, map));
+        data.forEach((pair: any) => callback(pair.value, pair.key));
     }
 
     /**
@@ -122,8 +122,6 @@ class MitDB {
                 await writeDB(this.db, JSON.stringify(data));
 
                 return true;
-            } else if (!map) {
-                return false;
             }
         } catch {}
         return 'error';
