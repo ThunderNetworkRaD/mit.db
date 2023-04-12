@@ -5,6 +5,8 @@ const writeDB = promisify(fs.writeFile);
 
 class MitDB {
     readonly db;
+    fn: string;
+    options?: any;
 
     /**
      * @constructor
@@ -37,7 +39,7 @@ class MitDB {
             const data: any[] = JSON.parse(file.toString());
     
             const i = data.findIndex((pair: any) => pair.key == key);
-    
+
             !data[i] ? data.push({ key, value }) : data[i] = { key, value };
 
             await writeDB(this.db, JSON.stringify(data));
