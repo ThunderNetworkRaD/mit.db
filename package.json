@@ -1,6 +1,6 @@
 {
   "name": "mit.db",
-  "version": "2023.02.23-1",
+  "version": "2023.04.12",
   "description": "An easy and quick database",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/ThunderNetworkRaD/mit.db.git"
   },
-  "author": "Thunder Network Development | Killer Boss Original",
+  "author": "ThunderNetworkRaD | Killer Boss Original",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ThunderNetworkRaD/mit.db/issues"
