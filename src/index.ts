@@ -5,8 +5,9 @@ const writeDB = promisify(fs.writeFile);
 
 class MitDB {
     readonly db;
-    fn: string;
-    options?: any;
+    filename: string;
+    options: any;
+    dirname: string;
 
     /**
      * @constructor
@@ -15,17 +16,18 @@ class MitDB {
      * @param options Options to pass in the constructor
      * @param options.dirname where to put the database?
      */
-    constructor(fn: string, options?: { dirname: string }) {
-        let dirname;
+    constructor(filename: string, options?: { dirname: string }) {
         if (options && options.dirname) {
-            dirname = options.dirname;
+            this.dirname = options.dirname;
         } else { 
-            dirname = 'data';
+            this.dirname = 'data';
         }
 
-        if (!fs.existsSync(dirname)) fs.mkdirSync(dirname);
+        this.filename = filename;
 
-        this.db = `./${dirname}/${fn}`
+        if (!fs.existsSync(this.dirname)) fs.mkdirSync(this.dirname);
+
+        this.db = `./${this.dirname}/${this.filename}`;
     }
 
     /**
@@ -99,7 +101,7 @@ class MitDB {
 
     /**
      * 
-     * @param callbackfn 
+     * @param callbackfilename 
      */
     forEach(callback: (value: any, key: any) => void) {
         const file = fs.readFileSync(this.db);
